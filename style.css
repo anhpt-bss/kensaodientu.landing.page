@@ -2093,16 +2093,24 @@ img {
   z-index: 2;
 }
 
-.contact-content .contact-social-info a {
+.contact-social-info a {
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 16px;
   font-size: 14px;
   color: #000000;
 }
 
-.contact-content .contact-social-info a:hover,
-.contact-content .contact-social-info a:focus {
+.contact-social-info a:last-child {
+  margin-right: 0px;
+}
+
+.contact-social-info a:hover,
+.contact-social-info a:focus {
   color: #232323;
+}
+
+.contact-social-info a img {
+  width: 32px;
 }
 
 .contact-content .single-contact-info {
