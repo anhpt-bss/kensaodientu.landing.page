@@ -2605,6 +2605,11 @@ img {
   margin-bottom: 1rem;
 }
 
+.product-description-img img {
+  width: 100%;
+  height: auto;
+}
+
 /* ====== The End ====== */
 
 /*# sourceMappingURL=style.css.map */
