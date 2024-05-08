@@ -2417,6 +2417,194 @@ img {
   box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.15);
 }
 
+/* :: 20.4.0 Product Detail Area CSS */
+.product-slideshow {
+  position: relative;
+  z-index: 1;
+}
+
+.product-slideshow .single-album {
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  margin-bottom: 0;
+  border: 1px solid transparent;
+}
+
+.product-slideshow .single-album:hover,
+.product-slideshow .single-album:focus {
+  border: 1px solid #000000;
+  box-shadow: none;
+  background-color: #f5f9fa;
+}
+
+.product-slideshow .owl-prev,
+.product-slideshow .owl-next {
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  background-color: #fff;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000000;
+  top: 50%;
+  left: -25px;
+  margin-top: -50px;
+  z-index: 50;
+  text-align: center;
+  line-height: 48px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .product-slideshow .owl-prev,
+  .product-slideshow .owl-next {
+    left: 0;
+  }
+}
+
+.product-slideshow .owl-prev:hover,
+.product-slideshow .owl-prev:focus,
+.product-slideshow .owl-next:hover,
+.product-slideshow .owl-next:focus {
+  background-color: #000000;
+  color: #fff;
+}
+
+.product-slideshow .owl-next {
+  left: auto;
+  right: -25px;
+}
+
+@media only screen and (max-width: 767px) {
+  .product-slideshow .owl-next {
+    right: 0;
+  }
+}
+
+.product-slideshow:hover .owl-prev,
+.product-slideshow:hover .owl-next {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Product info */
+.product-content {
+  padding: 0 1rem;
+}
+
+.product-title {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  position: relative;
+  color: #12263a;
+  margin-bottom: 1rem;
+}
+
+.product-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 80px;
+  background: #12263a;
+}
+
+.product-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  background: #256eff;
+  color: #fff;
+  padding: 0 0.3rem;
+  transition: all 0.5s ease;
+}
+
+.product-link:hover {
+  opacity: 0.9;
+}
+
+.product-price {
+  margin: 1rem 0;
+}
+
+.product-price span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #256eff;
+}
+
+.product-detail h2 {
+  text-transform: capitalize;
+  color: #12263a;
+  padding-bottom: 0.6rem;
+}
+
+.product-detail p {
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  opacity: 0.8;
+}
+
+.product-detail ul {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.product-detail ul li {
+  margin: 0;
+  list-style: none;
+  background: url(https://fadzrinmadu.github.io/hosted-assets/product-detail-page-design-with-image-slider-html-css-and-javascript/checked.png) left center no-repeat;
+  background-size: 18px;
+  padding-left: 1.7rem;
+  margin: 0.4rem 0;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.product-detail ul li span {
+  font-weight: 400;
+}
+
+.purchase-info {
+  margin: 1.5rem 0;
+}
+
+.purchase-info .btn {
+  background: #256eff;
+  border: 1.5px solid #ddd;
+  border-radius: 25px;
+  text-align: center;
+  padding: 0.45rem 0.8rem;
+  outline: 0;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.purchase-info .btn:hover {
+  opacity: 0.9;
+}
+
+.product-description-title {
+  background: rgba(0, 0, 0, .02);
+  color: rgba(0, 0, 0, .87);
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 0;
+  padding: .875rem;
+  text-transform: capitalize;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 /* ====== The End ====== */
 
 /*# sourceMappingURL=style.css.map */
