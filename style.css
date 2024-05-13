@@ -703,6 +703,12 @@ img {
   max-width: 240px;
 }
 
+@media only screen and (max-width: 767px) {
+  .classy-navbar .nav-brand {
+    max-width: 180px;
+  }
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .breakpoint-on .classy-navbar .classy-menu {
     background-color: #000000;
@@ -2616,14 +2622,6 @@ img {
   text-transform: capitalize;
   width: 100%;
   margin-bottom: 1rem;
-}
-
-.product-description-content .ck.ck-editor__top {
-  display: none !important;
-}
-
-.product-description-content .ck.ck-content {
-  border: none !important;
 }
 
 .product-description-img img {
