@@ -2618,6 +2618,14 @@ img {
   margin-bottom: 1rem;
 }
 
+.product-description-content .ck.ck-editor__top {
+  display: none !important;
+}
+
+.product-description-content .ck.ck-content {
+  border: none !important;
+}
+
 .product-description-img img {
   width: 100%;
   height: auto;

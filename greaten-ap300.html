@@ -104,15 +104,6 @@
                     <div class="product-slideshow owl-carousel">
                         <!-- Single product -->
                         <div class="single-product">
-                            <iframe width="100%" height="350" src="https://www.youtube.com/embed/iSfXu-0R6nI"
-                                title="Ngoại Hình Mới Của Kèn Điện Tử Greaten AP300 Khiến Shop Liên Tục Cháy Hàng [Part 1] #kènđiệntử"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-
-                        <!-- Single product -->
-                        <div class="single-product">
                             <img src="img/products/ap300-1.png" alt="">
                         </div>
 
@@ -173,9 +164,7 @@
             <div class="row mt-50">
                 <h2 class="product-description-title mb-10">Mô tả sản phẩm</h2>
                 <div class="col-12">
-                    <div class="product-description-img">
-                        <img src="pdf/GREATENAP300_CATALOGUE_HUONGDAN.jpg" alt="GREATENAP300_CATALOGUE_HUONGDAN" />
-                    </div>
+                    <div id="editor" class="product-description-content"></div>
                 </div>
             </div>
         </div>
@@ -325,6 +314,44 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
+    <!-- CKEditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load content from external file using fetch API
+            fetch('description/greaten-ap300.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(htmlContent => {
+                    // Initialize CKEditor on the 'editor' div
+                    ClassicEditor
+                        .create(document.querySelector('#editor'), {
+                            toolbar: [],    // Hide toolbar
+                        })
+                        .then(editor => {
+                            // Turn on read-only mode
+                            editor.enableReadOnlyMode('editor');
+
+                            // Hiding the toolbar in the read-only mode
+                            const toolbarElement = editor.ui.view.toolbar.element;
+                            toolbarElement.style.display = 'none';
+
+                            // Set the readonly content
+                            editor.setData(htmlContent);
+                        })
+                        .catch(error => {
+                            console.error(error);
+                        });
+                })
+                .catch(error => {
+                    console.error('Error fetching content:', error);
+                });
+        });
+    </script>
 </body>
 
 </html>

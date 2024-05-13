@@ -27,15 +27,6 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- CKEditor -->
-    <style>
-        /* Custom CSS to hide the border of CKEditor container */
-        .ck.ck-editor {
-            border: none;
-            /* Hide the border */
-        }
-    </style>
 </head>
 
 <body>
@@ -110,15 +101,6 @@
                 <!-- Product Image Slider Area -->
                 <div class="col-12 col-md-6 col-lg-6 mt-30">
                     <div class="product-slideshow owl-carousel">
-                        <!-- Single product -->
-                        <div class="single-product">
-                            <iframe width="100%" height="350" src="https://www.youtube.com/embed/a3LMUmoholY"
-                                title="Đập Hộp Kèn Điện Tử Greaten AP200 - Sự Lựa Chọn Số 1 Cho Người Mới [Part 1]"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                        </div>
-
                         <!-- Single product -->
                         <div class="single-product">
                             <img src="img/products/ap200-1.png" alt="">
@@ -369,33 +351,6 @@
                 });
         });
     </script>
-
-    <!-- <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Get the HTML content from the 'content' div
-            const htmlContent = document.getElementById('content').innerHTML;
-
-            // Initialize CKEditor in readonly mode
-            ClassicEditor
-                .create(document.querySelector('#editor'), {
-                    toolbar: [],    // Hide toolbar
-                })
-                .then(editor => {
-                    // Turn on read-only mode
-                    editor.enableReadOnlyMode('editor');
-
-                    // Hiding the toolbar in the read-only mode
-                    const toolbarElement = editor.ui.view.toolbar.element;
-                    toolbarElement.style.display = 'none';
-
-                    // Set the readonly content
-                    editor.setData(htmlContent);
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        });
-    </script> -->
 
 </body>
 
