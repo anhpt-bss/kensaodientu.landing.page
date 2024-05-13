@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="AnhPT">
     <meta name="description" content="Greaten AP200 - THDaudio - Chuyên Cung Cấp Các Sản Phẩm Sáo Điện Tử Chính Hãng">
-    <meta name="keywords" content="THDaudio, Sáo Điện Tử, Kèn Điện Tử, Greaten AP200, Greaten AP300, Greaten AP300PRO, Mua Bán, Phụ Kiện">
-  
+    <meta name="keywords"
+        content="THDaudio, Sáo Điện Tử, Kèn Điện Tử, Greaten AP200, Greaten AP300, Greaten AP300PRO, Swiff Audio WS-70, Giá Đỡ, Túi Đựng,  Mua Bán, Phụ Kiện">
+
     <meta property="og:title" content="Greaten AP200">
-    <meta property="og:description" content="Greaten AP200 - THDaudio - Chuyên Cung Cấp Các Sản Phẩm Sáo Điện Tử Chính Hãng">
+    <meta property="og:description"
+        content="Greaten AP200 - THDaudio - Chuyên Cung Cấp Các Sản Phẩm Sáo Điện Tử Chính Hãng">
     <meta property="og:url" content="https://thdaudio.com">
     <meta property="og:image" content="img/products/ap200-0.png">
-  
+
     <meta name="HandheldFriendly" content="true">
     <meta name="format-detection" content="telephone=no">
 
@@ -26,6 +28,15 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- CKEditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
+    <style>
+        /* Custom CSS to hide the border of CKEditor container */
+        .ck.ck-editor {
+            border: none;
+            /* Hide the border */
+        }
+    </style>
 </head>
 
 <body>
@@ -49,7 +60,7 @@
                     <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
                         <!-- Nav brand -->
-                        <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
+                        <a href="index.html" class="nav-brand"><img src="img/common/logo.png" alt=""></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -102,6 +113,15 @@
                     <div class="product-slideshow owl-carousel">
                         <!-- Single product -->
                         <div class="single-product">
+                            <iframe width="100%" height="350" src="https://www.youtube.com/embed/a3LMUmoholY"
+                                title="Đập Hộp Kèn Điện Tử Greaten AP200 - Sự Lựa Chọn Số 1 Cho Người Mới [Part 1]"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+                        <!-- Single product -->
+                        <div class="single-product">
                             <img src="img/products/ap200-1.png" alt="">
                         </div>
 
@@ -126,7 +146,7 @@
                 <div class="col-12 col-md-6 col-lg-6 mt-30">
                     <div class="product-content">
                         <h2 class="product-title">GREATEN AP200</h2>
-                        <a href="#" class="product-link">AKAI</a>
+                        <a href="#" class="product-link">EWI</a>
 
                         <div class="product-price">
                             <span>6.000.000 VNĐ</span>
@@ -162,9 +182,7 @@
             <div class="row mt-50">
                 <h2 class="product-description-title mb-10">Mô tả sản phẩm</h2>
                 <div class="col-12">
-                    <div class="product-description-img">
-                        <img src="pdf/GREATENAP200_CATALOGUE_HUONGDAN.jpg" alt="GREATENAP200_CATALOGUE_HUONGDAN" />
-                    </div>
+                    <div id="editor" class="product-description-content"></div>
                 </div>
             </div>
         </div>
@@ -239,7 +257,7 @@
         <div class="container">
             <div class="row d-flex flex-wrap align-items-center">
                 <div class="col-12 col-md-3">
-                    <a href="#"><img src="img/core-img/logo.png" alt=""></a>
+                    <a href="index.html" class="footer-brand"><img src="img/common/logo.png" alt=""></a>
                     <p class="copywrite-text">
                         Copyright &copy;
                         <script>document.write(new Date().getFullYear());</script> All rights reserved
@@ -259,8 +277,8 @@
                             <img src="img/icons/tiktok.svg" alt="tiktok" />
                         </a>
 
-                        <a href="https://www.facebook.com/" data-toggle="tooltip" data-placement="top"
-                            title="Facebook" target="_blank">
+                        <a href="https://www.facebook.com/" data-toggle="tooltip" data-placement="top" title="Facebook"
+                            target="_blank">
                             <img src="img/icons/facebook.svg" alt="facebook" />
                         </a>
 
@@ -314,6 +332,71 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="mail/jqBootstrapValidation.min.js"></script>
     <script src="mail/contact.js"></script>
+    <!-- CKEditor -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load content from external file using fetch API
+            fetch('description/greaten-ap200.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(htmlContent => {
+                    // Initialize CKEditor on the 'editor' div
+                    ClassicEditor
+                        .create(document.querySelector('#editor'), {
+                            toolbar: [],    // Hide toolbar
+                        })
+                        .then(editor => {
+                            // Turn on read-only mode
+                            editor.enableReadOnlyMode('editor');
+
+                            // Hiding the toolbar in the read-only mode
+                            const toolbarElement = editor.ui.view.toolbar.element;
+                            toolbarElement.style.display = 'none';
+
+                            // Set the readonly content
+                            editor.setData(htmlContent);
+                        })
+                        .catch(error => {
+                            console.error(error);
+                        });
+                })
+                .catch(error => {
+                    console.error('Error fetching content:', error);
+                });
+        });
+    </script>
+
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get the HTML content from the 'content' div
+            const htmlContent = document.getElementById('content').innerHTML;
+
+            // Initialize CKEditor in readonly mode
+            ClassicEditor
+                .create(document.querySelector('#editor'), {
+                    toolbar: [],    // Hide toolbar
+                })
+                .then(editor => {
+                    // Turn on read-only mode
+                    editor.enableReadOnlyMode('editor');
+
+                    // Hiding the toolbar in the read-only mode
+                    const toolbarElement = editor.ui.view.toolbar.element;
+                    toolbarElement.style.display = 'none';
+
+                    // Set the readonly content
+                    editor.setData(htmlContent);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        });
+    </script> -->
+
 </body>
 
 </html>

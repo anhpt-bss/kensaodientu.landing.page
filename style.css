@@ -700,7 +700,7 @@ img {
 }
 
 .classy-navbar .nav-brand {
-  max-width: 130px;
+  max-width: 240px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1690,6 +1690,11 @@ img {
   .footer-area {
     text-align: center;
   }
+}
+
+.footer-area .footer-brand {
+  max-width: 160px;
+  display: inline-block;
 }
 
 .footer-area .copywrite-text {
