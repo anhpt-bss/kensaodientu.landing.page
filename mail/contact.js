@@ -18,13 +18,13 @@ $(function () {
             var templateParams = {
                 from_email: email,
                 from_name: name,
-                to_email: "anhpt.devweb@gmail.com",
+                to_email: "thdaudio@outlook.com",
                 to_name: 'THDaudio',
                 phone_number: phoneNumber,
                 message: message
             };
 
-            emailjs.send("service_fhjdxqq", "template_fssxp1k", templateParams, 'nSKnKVgzDeS5N2veI')
+            emailjs.send("service_1rm0cea", "template_4s5uwq1", templateParams, 'P3Qm15fnmpdQlRhHb')
                 .then(function(response) {
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
